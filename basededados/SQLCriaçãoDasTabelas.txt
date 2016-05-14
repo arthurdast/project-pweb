@@ -1,0 +1,15 @@
+
+CREATE TABLE news (
+id_news IDENTITY PRIMARY KEY,
+noticia varchar(5000),
+resumo varchar(600)
+)
+
+CREATE TABLE comments (
+id_comments IDENTITY PRIMARY KEY ,
+fk_news int,
+comentario varchar(5000),
+nome varchar(150),
+email varchar(150),
+FOREIGN KEY(fk_news) REFERENCES news (id_news)
+)
