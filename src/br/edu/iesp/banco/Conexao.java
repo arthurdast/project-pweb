@@ -12,7 +12,7 @@ public class Conexao {
 	private static String senha = "";
 	private static String PathBase = "C:\\Users\\arthur\\Dropbox\\WebP-6\\project-pweb\\basededados\\dados";
 	private static final String URL = "jdbc:hsqldb:file:" + PathBase/* + ";shutdown=true;hsqldb.write_delay=false; "*/;
-
+	// 	conectar com o banco
 	public static Connection conectar() {
 		if (conn == null) {
 			try {
@@ -28,7 +28,8 @@ public class Conexao {
 		}
 		return conn;
 	}
-
+	
+	//fechar conexão
 	public static void fecharcnx() {
 
 		try {

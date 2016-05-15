@@ -7,11 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import br.edu.iesp.banco.Conexao;
 import br.edu.iesp.entity.News;
-
+//Faz o CRUD Da classe News
 public class DAONews {
 
-	private final String SQL_INSER_NEWS = "INSERT INTO NEWS (NOTICIA,RESUMO) VALUES (?,?) ";
-	private final String SQL_UPDATE_NEWS = "UPDATE NEWS SET NOTICIA = ? , RESUMO = ? WHERE ID_NEWS = ? ";
+	private final String SQL_INSER_NEWS = "INSERT INTO NEWS (NOTICIA,RESUMO,MANCHETE) VALUES (?,?,?) ";
+	private final String SQL_UPDATE_NEWS = "UPDATE NEWS SET NOTICIA = ? , RESUMO = ? , MENCHETE = ? WHERE ID_NEWS = ? ";
 	private final String SQL_DELETE_NEWS = "DELETE FROM NEWS WHERE ID_NEWS = ?";
 	private final String SQL_SELECT_NEWS = "SELECT * FROM NEWS";
 
@@ -25,6 +25,7 @@ public class DAONews {
 			pst = conn.prepareStatement(SQL_INSER_NEWS);
 			pst.setString(1, news.getNoticia());
 			pst.setString(2, news.getResumo());
+			pst.setString(3, news.getManchete());
 			retorno = pst.execute();
 			pst.close();
 			Conexao.fecharcnx();
@@ -48,6 +49,7 @@ public class DAONews {
 				news.setId(rs.getInt("ID_NEWS"));
 				news.setNoticia(rs.getString("NOTICIA"));
 				news.setResumo(rs.getString("RESUMO"));
+				news.setManchete(rs.getString("MANCHETE"));
 				listNews.add(news);
 
 			}
@@ -70,7 +72,8 @@ public class DAONews {
 			pst = conn.prepareStatement(SQL_UPDATE_NEWS);
 			pst.setString(1, news.getNoticia());
 			pst.setString(2, news.getResumo());
-			pst.setInt(3, news.getId());
+			pst.setString(3, news.getManchete());
+			pst.setInt(4, news.getId());
 			retorno = pst.execute();
 			pst.close();
 			Conexao.fecharcnx();
