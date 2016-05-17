@@ -11,10 +11,10 @@
 </head>
 <body>
 <!-- Formulario que envia o login e senha para servinews via post-->
-<form action="ServicoNews" name="login" method="post">
+<form action="ServicoLogin" name="login" method="post">
 	login:<input type="text" id="name" name="name" required></br>
 	senha:<input type="text" id="name" name="name" required></br>
-	<input type="submit" value="Cadastrar" class="btn">
+	<input type="submit" value="Cadastrar" class="btn">&nbsp;&nbsp;&nbsp;  <input type="reset" value="Limpar" class="btn">
 </form>
 
 </body>

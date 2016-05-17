@@ -13,7 +13,7 @@
 
 <br>
 <!-- Mostra a noticia selecionada na lista de manchetas -->
-Noticia
+Noticia&nbsp;&nbsp;&nbsp;<a href="manchetes.jsp">Volta as manchetes</a>
 <br>
 <br>
 	${news.resumo}
