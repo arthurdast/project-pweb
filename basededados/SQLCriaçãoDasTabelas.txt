@@ -13,3 +13,4 @@ nome varchar(150),
 email varchar(150),
 FOREIGN KEY(fk_news) REFERENCES news (id_news)
 )
+
