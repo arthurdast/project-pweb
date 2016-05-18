@@ -31,7 +31,7 @@ public class ServicoManchetes extends HttpServlet {
 		for (News news : listnews) {
 			if (news.getId() == id) {
 	//Envia a new.jsp a noticia selecionada de acordo com o id dela				
-				request.setAttribute("news", news);
+				getServletContext().setAttribute("news", news);
 				request.getRequestDispatcher("news.jsp").forward(request, response);
 			}
 

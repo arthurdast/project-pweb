@@ -32,7 +32,6 @@ public class ServicoDAOManchetes extends HttpServlet {
 			throws ServletException, IOException {
 
 		int idNews = Integer.parseInt(request.getParameter("news"));
-		DAONews daoNews = new DAONews();
 		ArrayList<News> listnews = daoNews.listarNews();
 		// Deleta a notica de acorto com o id
 		for (News news : listnews) {

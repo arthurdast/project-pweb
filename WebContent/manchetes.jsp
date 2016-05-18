@@ -1,3 +1,4 @@
+<%@page import="sun.print.resources.serviceui_zh_CN"%>
 <%@page import="br.edu.iesp.banco.Conexao"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="br.edu.iesp.banco.DAONews.*"%>
@@ -10,7 +11,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <% DAONews daoNews = new DAONews();
 ArrayList<News> listnews = daoNews.listarNews();
-pageContext.setAttribute("listnews", listnews);  
+pageContext.setAttribute("listnews", listnews);
 %>
 
 

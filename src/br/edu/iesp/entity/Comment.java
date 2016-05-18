@@ -1,6 +1,6 @@
 package br.edu.iesp.entity;
 
-public class Comments {
+public class Comment {
 //classe responsavel pelos comentarios
 	private int id;
 	private String comentario;
