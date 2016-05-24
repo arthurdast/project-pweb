@@ -14,3 +14,11 @@ email varchar(150),
 FOREIGN KEY(fk_news) REFERENCES news (id_news)
 )
 
+CREATE TABLE user(
+
+id_user IDENTITY PRIMARY KEY ,
+nome varchar(150),
+login varchar(150),
+senha varchar(150)
+)
+

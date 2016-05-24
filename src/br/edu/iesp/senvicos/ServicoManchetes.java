@@ -16,21 +16,22 @@ import br.edu.iesp.entity.News;
 public class ServicoManchetes extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	DAONews daoNews = new DAONews();
-	
+	ArrayList<News> listnews = daoNews.listarNews();
+
 	public ServicoManchetes() {
 		super();
 
 	}
-// Recebe request de manchetes.jsp do link selecionado
+
+	// Recebe request de manchetes.jsp do link selecionado
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		ArrayList<News>	listnews = daoNews.listarNews();
-		
+
 		int id = Integer.parseInt(request.getParameter("id"));
 		for (News news : listnews) {
 			if (news.getId() == id) {
-	//Envia a new.jsp a noticia selecionada de acordo com o id dela				
+				// Envia a news.jsp a noticia selecionada de acordo com o id
+				// dela
 				getServletContext().setAttribute("news", news);
 				request.getRequestDispatcher("news.jsp").forward(request, response);
 			}
@@ -39,11 +40,24 @@ public class ServicoManchetes extends HttpServlet {
 
 	}
 
-//Recebe request de manchetes.jsp para adicionar manchetes 
+	// Recebe request de manchetes.jsp para pesquisar manchetes
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		
+		String pesquisa = request.getParameter("pesquisa");
+
+		for (News news : listnews) {
+			if (pesquisa.toLowerCase().contains(news.getManchete().toLowerCase()) ) {
+				
+				System.out.println(news.getManchete().toLowerCase());
+				getServletContext().setAttribute("news", news);
+				request.getRequestDispatcher("news.jsp").forward(request, response);
+				
+			}
+		}
+		boolean sempesquisa = true;
+		request.setAttribute("sempesquisa", sempesquisa);
+		request.getRequestDispatcher("manchetes.jsp").forward(request, response);
 
 	}
 
