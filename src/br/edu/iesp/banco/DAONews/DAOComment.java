@@ -12,10 +12,10 @@ import br.edu.iesp.entity.News;
 
 public class DAOComment {
 
-	private final String SQL_INSER_COMMENT = "INSERT INTO COMMENTS (FK_NEWS,COMENTARIO,NOME,EMAIL) VALUES (?,?,?,?)";
+	private final String SQL_INSER_COMMENT = "INSERT INTO COMMENTS (FK_NEWS,COMENTARIO,NOME,EMAIL,DATA) VALUES (?,?,?,?,NOW)";
 	private final String SQL_UPDATE_COMMENT = "UPDATE COMMENTS SET COMENTARIO = ? , NOME = ? , EMAIL = ? WHERE ID_COMMENTS = ? ";
 	private final String SQL_DELETE_COMMENT = "DELETE FROM COMMENTS WHERE ID_COMMENTS = ?";
-	private final String SQL_SELECT_COMMENT = "SELECT ID_COMMENTS , COMENTARIO , NOME , EMAIL FROM NEWS N INNER JOIN COMMENTS C ON N.ID_NEWS = C.FK_NEWS WHERE N.ID_NEWS = ?";
+	private final String SQL_SELECT_COMMENT = "SELECT ID_COMMENTS , COMENTARIO , NOME , EMAIL , DATA FROM NEWS N INNER JOIN COMMENTS C ON N.ID_NEWS = C.FK_NEWS WHERE N.ID_NEWS = ?";
 
 	private PreparedStatement pst = null;
 
@@ -55,6 +55,7 @@ public class DAOComment {
 				comment.setNome(rs.getString("NOME"));
 				comment.setEmail(rs.getString("EMAIL"));
 				comment.setFk_news(news.getId());
+				comment.setData(rs.getTimestamp("DATA"));
 				listComments.add(comment);
 			}
 			rs.close();

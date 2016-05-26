@@ -52,6 +52,7 @@ public class ServicoDAOManchetes extends HttpServlet {
 		news.setManchete(request.getParameter("manchete"));
 		news.setResumo(request.getParameter("resumo"));
 		news.setNoticia(request.getParameter("noticia"));
+		news.setCategoria(request.getParameter("categoria"));
 		daoNews.inserirNews(news);
 		request.getRequestDispatcher("manchetes.jsp").forward(request, response);
 

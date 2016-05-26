@@ -10,7 +10,7 @@ import br.edu.iesp.entity.News;
 //Faz o CRUD Da classe News
 public class DAONews {
 
-	private final String SQL_INSER_NEWS = "INSERT INTO NEWS (NOTICIA,RESUMO,MANCHETE) VALUES (?,?,?) ";
+	private final String SQL_INSER_NEWS = "INSERT INTO NEWS (CATEGORIA,NOTICIA,RESUMO,MANCHETE,DATA) VALUES (?,?,?,?,NOW) ";
 	private final String SQL_UPDATE_NEWS = "UPDATE NEWS SET NOTICIA = ? , RESUMO = ? , MENCHETE = ? WHERE ID_NEWS = ? ";
 	private final String SQL_DELETE_NEWS = "DELETE FROM NEWS WHERE ID_NEWS = ?";
 	private final String SQL_SELECT_NEWS = "SELECT * FROM NEWS";
@@ -23,9 +23,10 @@ public class DAONews {
 
 		try {
 			pst = conn.prepareStatement(SQL_INSER_NEWS);
-			pst.setString(1, news.getNoticia());
-			pst.setString(2, news.getResumo());
-			pst.setString(3, news.getManchete());
+			pst.setString(1, news.getCategoria());
+			pst.setString(2, news.getNoticia());
+			pst.setString(3, news.getResumo());
+			pst.setString(4, news.getManchete());
 			retorno = pst.execute();
 			pst.close();
 			Conexao.fecharcnx();
@@ -50,6 +51,8 @@ public class DAONews {
 				news.setNoticia(rs.getString("NOTICIA"));
 				news.setResumo(rs.getString("RESUMO"));
 				news.setManchete(rs.getString("MANCHETE"));
+				news.setData(rs.getTimestamp("DATA"));
+				news.setCategoria(rs.getString("CATEGORIA"));
 				listNews.add(news);
 
 			}

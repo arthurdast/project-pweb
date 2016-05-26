@@ -10,6 +10,13 @@
 <title>Noticiario</title>
 </head>
 <body>
+<%@ include file="top.jsp"%>
+<br>
+<br>
+<br>
+<br>
+
+
 <p align="right"> <a href="manchetes.jsp"><button>Manchetes</button></a> </p>
 <!-- Formulario que envia o login e senha para servinews via post-->
 <form action="ServicoLogin" name="login" method="post">
@@ -23,10 +30,7 @@
 <h4>login ou senha errado</h4>
 
 </c:if>
-<br>
-<br>
-<br>
-<br>
+	
 
 <form action="ServicoCadastroLogin" name="botaocadastro" method="get">
 	<input type="submit" value="Cadastro" class="btn">
