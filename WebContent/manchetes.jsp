@@ -129,23 +129,26 @@
 					<textarea name="noticia" class="form-control" required rows=""
 						cols="" placeholder="Notícia"></textarea>
 				</div>
-
-				<b>Categoria</b><br> <select name="categoria">
-					<option value="Arte">Arte</option>
-					<option value="Acidente">Acidente</option>
-					<option value="Cultura">Cultura</option>
-					<option value="Ciência">Ciência</option>
-					<option value="Clima">Clima</option>
-					<option value="Desastre">Desastre</option>
-					<option value="Entretenimento">Entretenimento</option>
-					<option value="Esporte">Esporte</option>
-					<option value="Negócio">Negócio</option>
-					<option value="Policial">Policial</option>
-					<option value="Religião">Religião</option>
-					<option value="Saude">Saúde</option>
-					<option value="Tecnologia">Tecnologia</option>
-				</select> <br>
-				<br> <input type="submit" value="Inserir"
+				
+				<div class="form-group">
+					<label for="categoria">Categoria</label>
+					<select name="categoria" class="form-control">
+						<option value="Arte">Arte</option>
+						<option value="Acidente">Acidente</option>
+						<option value="Cultura">Cultura</option>
+						<option value="Ciência">Ciência</option>
+						<option value="Clima">Clima</option>
+						<option value="Desastre">Desastre</option>
+						<option value="Entretenimento">Entretenimento</option>
+						<option value="Esporte">Esporte</option>
+						<option value="Negócio">Negócio</option>
+						<option value="Policial">Policial</option>
+						<option value="Religião">Religião</option>
+						<option value="Saude">Saúde</option>
+						<option value="Tecnologia">Tecnologia</option>
+					</select>
+				</div>				
+				<input type="submit" value="Inserir"
 					class="btn btn-success">&nbsp;&nbsp;&nbsp;<input
 					type="reset" value="Limpar" class="btn">
 			</form>
@@ -153,5 +156,9 @@
 		</c:if>
 
 	</div>
+	
+	<footer class="text-center">
+		IESP 2016.1
+	</footer>
 </body>
 </html>

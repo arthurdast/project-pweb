@@ -68,14 +68,32 @@ Comentado em: ${comentario.data}
 		<br> <br> <br>
 		<!-- Formulario apra a criação da manchete -->
 		<form action="ServicoDAOComment" name="InserirComment" method="post">
-			Nome:<input type="text" id="nome" name="nome" required></br>
-			Email:<input type="text" id="email" name="email" required></br>
-			Comentario:<input type="text" id="comentario" name="comentario"
-				required></br> <input type="hidden" id="idNews" name="idNews"
+			
+			<div class="form-group">
+				<label for="nome">Nome</label> <input type="text"
+				class="form-control" id="nome" name="nome"
+				required placeholder="Nome">
+			</div>
+			
+			<div class="form-group">
+				<label for="email">Email</label> <input type="text"
+				class="form-control" id="email" name="email"
+				required placeholder="Email">
+			</div>
+			
+			<div class="form-group">
+				<label for="comentario">Comentario</label>
+				<textarea name="comentario" class="form-control" required rows="4"
+					cols="4" placeholder="Comentario"></textarea>
+			</div>
+						
+			
+			<input type="hidden" id="idNews" name="idNews"
 				value="${idNews}"> <input type="submit" value="Inserir"
 				class="btn">&nbsp;&nbsp;&nbsp;<input type="reset"
 				value="Limpar" class="btn">
 		</form>
 	</div>
+	
 </body>
 </html>

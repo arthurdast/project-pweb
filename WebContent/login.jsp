@@ -13,43 +13,82 @@
 <%@ include file="top.jsp"%>
 <br>
 <br>
+<div class="container">
+
 <br>
 <br>
 
 
-<p align="right"> <a href="manchetes.jsp"><button>Manchetes</button></a> </p>
-<!-- Formulario que envia o login e senha para servinews via post-->
-<form action="ServicoLogin" name="login" method="post">
-	login:<input type="text" id="login" name="login" required></br>
-	senha:<input type="text" id="senha" name="senha" required></br>
-	<input type="submit" value="Logar" class="btn">&nbsp;&nbsp;&nbsp;  <input type="reset" value="Limpar" class="btn">
-</form>
+<p align="right"> <a href="manchetes.jsp" class="btn btn-info">Manchetes</a> </p>
 
 <c:if test="${aviso}">
-<h3>Login errado.</h3>
-<h4>login ou senha errado</h4>
-
+		
+	<div class="alert alert-danger" role="alert">Dados inválidos!</div>
+	
 </c:if>
+
+<!-- Formulario que envia o login e senha para servinews via post-->
+<form action="ServicoLogin" name="login" method="post">
+
+	<div class="form-group">
+		<label for="login">Login</label> <input type="text"
+		class="form-control" id="login" name="login"
+		required placeholder="Login">
+	</div>
+	
+	
+	<div class="form-group">
+		<label for="senha">Senha</label> <input type="text"
+		class="form-control" id="senha" name="senha"
+		required placeholder="Senha">
+	</div>
+	<div class="text-center">
+		<input type="submit" value="Logar" class="btn">
+	</div>
+	
+</form>
+<br>
+<div class="text-center"> 
+	<form action="ServicoCadastroLogin" name="botaocadastro" method="get">
+		<input type="submit" value="Cadastro" class="btn btn-success">
+	</form>
+</div>
+
 	
 
-<form action="ServicoCadastroLogin" name="botaocadastro" method="get">
-	<input type="submit" value="Cadastro" class="btn">
-</form>
+
 
 <c:if test="${cadastro}">
-<!-- Formulario para cadastrar usuario-->
-<form action="ServicoCadastroLogin" name="formcadastro" method="post">
-    Nome:<input type="text" id="nome" name="nome" required></br>
-	Login:<input type="text" id="login" name="login" required></br>
-	Senha:<input type="text" id="senha" name="senha" required></br>
-	<input type="submit" value="Cadastar Login" class="btn">&nbsp;&nbsp;&nbsp;  <input type="reset" value="Limpar" class="btn">
-</form>
+	<!-- Formulario para cadastrar usuario-->
+	<form action="ServicoCadastroLogin" name="formcadastro" method="post">
+	
+	<div class="form-group">
+		<label for="nome">Nome</label> <input type="text"
+		class="form-control" id="nome" name="nomes"
+		required placeholder="Nome">
+	</div>
+	
+	<div class="form-group">
+		<label for="login">Login</label> <input type="text"
+		class="form-control" id="login" name="login"
+		required placeholder="Login">
+	</div>
+	
+	
+	<div class="form-group">
+		<label for="senha">Senha</label> <input type="text"
+		class="form-control" id="senha" name="senha"
+		required placeholder="Senha">
+	</div>
+	
+		<input type="submit" value="Cadastar Login" class="btn">&nbsp;&nbsp;&nbsp;  <input type="reset" value="Limpar" class="btn">
+	</form>
 </c:if>
 
 <c:if test="${cadastrado}">
 <h3>Login cadastrado.</h3>
 </c:if>
-
+</div>
 
 </body>
 </html>

@@ -9,10 +9,9 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/arthur/Dropbox/WebP-6/project-pweb/WebContent/WEB-INF/lib/hsqldb.jar"/>
-	<classpathentry kind="lib" path="C:/Users/arthur/Dropbox/WebP-6/project-pweb/WebContent/WEB-INF/lib/jstl-api-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/arthur/Dropbox/WebP-6/project-pweb/WebContent/WEB-INF/lib/servlet-2_3-fcs-classfiles.zip"/>
-	<classpathentry kind="lib" path="C:/Users/arthur/Dropbox/WebP-6/project-pweb/WebContent/WEB-INF/lib/sqltool.jar"/>
-	<classpathentry kind="lib" path="C:/Users/arthur/Dropbox/WebP-6/project-pweb/WebContent/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl-api-1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/sqltool.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/standard.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
