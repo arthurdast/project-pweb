@@ -25,14 +25,18 @@
 <body>
 
 	<%@ include file="top.jsp"%>
-
+<br>
+<br>
+<br>
+<br>
 	<div class="container">
 		
 		<div class="row">
 	
 			<div class="col-md-12">
+			<p align="right">postado em ${news.data}</p>
 				<h2>
-					${news.resumo}
+					${news.resumo} 
 				</h2>
 				<p>${news.noticia}</p>					
 			</div>
@@ -55,6 +59,7 @@
 Nome :	${comentario.nome}
 E-mail:	${comentario.email}
 <br>
+Comentado em: ${comentario.data}
 			<br>
  Comentario: ${comentario.comentario}
 <br>

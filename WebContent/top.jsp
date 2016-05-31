@@ -1,4 +1,3 @@
-<%@page import="sun.print.resources.serviceui_zh_CN"%>
 <%@page import="br.edu.iesp.banco.Conexao"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="br.edu.iesp.banco.DAONews.*"%>
@@ -21,30 +20,31 @@
 			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
 			<span class="icon-bar"></span> <span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="#">Manchetes PWEB, Olá ${userlogado.nome}  </a>
+		<a class="navbar-brand" href="#">Manchetes PWEB, Olá
+			${userlogado.nome} </a>
 	</div>
 	<div id="navbar" class="navbar-collapse collapse">
 		<c:if test="${empty userlogado}">
 
-			<form action="ServicoLogin" class="navbar-form navbar-right" method="post">
-				<div class="form-group">
-					<input type="text" placeholder="Login" class="form-control"
-						name="login">
-				</div>
-				<div class="form-group">
-					<input type="password" placeholder="Senha" class="form-control"
-						name="senha">
-				</div>
-				<button type="submit" class="btn btn-success">Logar</button>
+			<form class="navbar-form navbar-right"
+				action='<c:url value="login.jsp"/>' name="botaologat">
+				<input type="submit" value="Logar"
+					class="btn btn-info">
 			</form>
+
 		</c:if>
-		<c:if test="${not empty userlogado}"> 
-			
-			<form class="navbar-form navbar-right" action="ServicoLogin" name="botaocadastro"
-				method="get">
+		<c:if test="${not empty userlogado}">
+
+			<form class="navbar-form navbar-right"
+				action='<c:url value="login.jsp"/>' name="botaocadastro">
+				<input type="submit" value="Cadastrar Adiministrador"
+					class="btn btn-info">
+			</form>
+			<form class="navbar-form navbar-right" action="ServicoLogin"
+				name="botaodeslogar" method="get">
 				<input type="submit" value="Deslogar" class="btn btn-info">
 			</form>
-			
+
 		</c:if>
 	</div>
 	<!--/.navbar-collapse -->

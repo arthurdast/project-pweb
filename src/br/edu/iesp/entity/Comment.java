@@ -1,5 +1,7 @@
 package br.edu.iesp.entity;
 
+import java.sql.Timestamp;
+
 public class Comment {
 //classe responsavel pelos comentarios
 	private int id;
@@ -7,7 +9,16 @@ public class Comment {
 	private String nome;
 	private String email;
 	private int fk_news;
+	private Timestamp data;
 	
+	
+	
+	public Timestamp getData() {
+		return data;
+	}
+	public void setData(Timestamp data) {
+		this.data = data;
+	}
 	public String getComentario() {
 		return comentario;
 	}
